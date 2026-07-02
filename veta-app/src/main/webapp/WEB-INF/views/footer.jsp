@@ -3,7 +3,7 @@
     boolean sw = "sw".equals(session.getAttribute("lang"));
 %>
 
-<%-- Font Awesome CDN (kama haikuwekwa kwenye header.jsp) --%>
+<%-- Font Awesome CDN --%>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>

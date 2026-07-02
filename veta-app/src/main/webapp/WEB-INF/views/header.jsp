@@ -44,9 +44,8 @@ body::before {
 	z-index: 0;
 }
 
-/* === UTATUZI: Logo na Maandishi kutokatwa (Responsive Header) === */
 #nav-header {
-	height: auto !important; /* Inaruhusu header kutanuka kulingana na maandishi */
+	height: auto !important; 
 	min-height: 90px;
 	padding: 10px 0;
 	background-size: cover;
@@ -68,7 +67,6 @@ body::before {
 	flex-shrink: 0;
 }
 .logo-box img {
-	/* IMEBADILISHWA: Nembo imezidishwa ukubwa hapa */
 	width: clamp(55px, 9vw, 95px); 
 	height: auto;
 	object-fit: contain;
@@ -76,7 +74,7 @@ body::before {
 .college-name-left {
 	font-size: clamp(13px, 1.8vw, 20px);
 	font-weight: bold;
-	white-space: nowrap; /* Inazuia jina kukatwa ovyo */
+	white-space: nowrap; 
 
 }
 .government-titles-center {
@@ -97,18 +95,15 @@ body::before {
 	margin-top: 2px;
 }
 
-/* Kwenye simu ndogo sana, vitu vishuke chini kuliko kubanana na kukatika */
 @media (max-width: 480px) {
 	.nav-header-inner {
 		gap: 8px;
 		padding: 3px 2%;
 	}
 	.college-name-left {
-		display: none; /* Mara nyingi kwenye simu jina hili linafichwa kwa kuwa nembo na maelezo ya kati yanatosha */
-	}
+		display: none;}
 }
 
-/* === UTATUZI WA SCROLL: Mobile menu KUSHOTO yenye Scroll huru === */
 #mobileNavBackdrop {
 	display: none;
 	position: fixed !important;
@@ -131,15 +126,13 @@ body::before {
 	top: 0;
 	left: 0; 
 	width: min(75vw, 260px); 
-	height: 100% !important; /* Badala ya 100vh ili kuzuia matatizo ya simu */
+	height: 100% !important;
 	max-height: 100vh;
-	background: #002147; /* Rangi ya Bluu nzito */
+	background: #002147; 
 	z-index: 99999;
 	transform: translateX(-100%); 
 	transition: transform 0.3s ease;
 	box-shadow: 6px 0 20px rgba(0, 0, 0, 0.3);
-	
-	/* Hapa ndio suluhisho la kuscroll */
 	overflow-y: auto !important;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch !important; 
@@ -147,8 +140,6 @@ body::before {
 #mobileNav.open {
 	transform: translateX(0);
 }
-
-/* Inazuia tu background ya nyuma isiscroll, lakini inaruhusu menu iscrolo */
 body.menu-open {
 	overflow: hidden !important;
 	position: fixed;
@@ -168,7 +159,7 @@ body.menu-open {
 }
 .mobile-inner {
 	padding-top: 5px;
-	padding-bottom: 40px; /* Nafasi ya ziada chini kabisa baada ya kulink kote ili isigomee mwishoni */
+	padding-bottom: 40px;
 }
 .mobile-inner a {
 	display: block;

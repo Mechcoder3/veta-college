@@ -156,8 +156,6 @@
       <%-- Documents Tab --%>
       <div id="ptab-docs" class="ptbc">
         <div style="display:flex;flex-direction:column;gap:8px">
-
-          <%-- ✅ Tumia c:set badala ya c:out ndani ya href --%>
           <c:set var="stuNum" value="${student != null ? student.studentNumber : ''}"/>
           <a href="${pageContext.request.contextPath}/download?type=admission&ref=${stuNum}" class="dltb">
             <span>📄 <% if(sw){ %>Barua ya Udahili<% } else { %>Admission Letter<% } %></span>
