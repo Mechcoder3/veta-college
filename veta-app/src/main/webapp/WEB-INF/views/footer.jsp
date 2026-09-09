@@ -305,8 +305,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				</span> <a href="tel:+255282804951" class="footer-contact-item"> <i
 					class="fa-solid fa-phone"></i> <span>+255 282 804 951</span>
 				</a> <a href="tel:+255765765790" class="footer-contact-item"> <i
-					class="fa-solid fa-mobile-screen"></i> <span>+255 765 765
-						790</span>
+					class="fa-solid fa-mobile-screen"></i> <span>+255 653559656</span>
 				</a> <a href="mailto:kigomarvtsc@veta.go.tz" class="footer-contact-item">
 					<i class="fa-solid fa-envelope"></i> <span>kigomarvtsc@veta.go.tz</span>
 				</a> <span class="footer-contact-item"> <i
