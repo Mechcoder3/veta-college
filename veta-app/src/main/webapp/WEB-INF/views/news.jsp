@@ -94,7 +94,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				</c:when>
 				<c:otherwise>
 					<div style="text-align: center; padding: 48px; color: var(--g400)">
-						<div style="font-size: 3rem; margin-bottom: 12px">📰</div>
+						<div style="font-size: 3rem; margin-bottom: 12px"><i class="fa-solid fa-newspaper"></i></div>
 						<p>
 							<%
 							if (sw) {
@@ -116,7 +116,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				style="background: #fff; border-radius: var(--r12); box-shadow: var(--s2); padding: 20px">
 				<h4
 					style="font-size: .9rem; color: var(--navy); margin-bottom: 14px; border-bottom: 2px solid var(--blue); padding-bottom: 8px">
-					📅
+					<i class="fa-solid fa-calendar-days"></i>
 					<%
 				if (sw) {
 				%>Matukio Yajayo<%
@@ -258,7 +258,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 
 			<div
 				style="background: linear-gradient(135deg, var(--navy), var(--blue)); border-radius: var(--r12); padding: 20px; margin-top: 16px; text-align: center">
-				<div style="font-size: 2rem; margin-bottom: 10px">📢</div>
+				<div style="font-size: 2rem; margin-bottom: 10px; color: #fff"><i class="fa-solid fa-bullhorn"></i></div>
 				<h4 style="color: #fff; font-size: .95rem; margin-bottom: 8px">
 					<% if(sw){ %>Matangazo ya Udahili<% } else { %>Intake Announcements<% } %>
 				</h4>

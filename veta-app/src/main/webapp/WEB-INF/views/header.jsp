@@ -175,6 +175,11 @@ body.menu-open {
 	background: rgba(255, 255, 255, 0.1);
 	color: #ffeb3b !important; 
 }
+.mobile-inner a i {
+	width: 20px;
+	text-align: center;
+	margin-right: 8px;
+}
 </style>
 </head>
 <body>
@@ -340,7 +345,7 @@ body.menu-open {
  %>
 					</a>
 				</div>
-				<button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+				<button class="menu-toggle" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
 			</div>
 		</div>
 
@@ -352,20 +357,20 @@ body.menu-open {
 	<%-- 5. MOBILE MENU --%>
 	<div id="mobileNav">
 		<div class="mobile-inner">
-			<button class="mobile-close-btn" onclick="closeMobileMenu()">&times;</button>
-			<a href="${pageContext.request.contextPath}/home">🏠 <%
+			<button class="mobile-close-btn" onclick="closeMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+			<a href="${pageContext.request.contextPath}/home"><i class="fa-solid fa-house"></i> <%
 			if (sw) {
 			%>Nyumbani<%
 			} else {
 			%>Home<%
 			}
-			%></a> <a href="${pageContext.request.contextPath}/about">ℹ️ <%
+			%></a> <a href="${pageContext.request.contextPath}/about"><i class="fa-solid fa-circle-info"></i> <%
  if (sw) {
  %>Kuhusu Sisi<%
  } else {
  %>About Us<%
  }
- %></a> <a href="${pageContext.request.contextPath}/courses?type=short">⚡
+ %></a> <a href="${pageContext.request.contextPath}/courses?type=short"><i class="fa-solid fa-bolt"></i>
 				<%
  if (sw) {
  %>Kozi Fupi<%
@@ -373,7 +378,7 @@ body.menu-open {
  %>Short Courses<%
  }
  %>
-			</a> <a href="${pageContext.request.contextPath}/courses?type=long">🎓
+			</a> <a href="${pageContext.request.contextPath}/courses?type=long"><i class="fa-solid fa-graduation-cap"></i>
 				<%
  if (sw) {
  %>Kozi Ndefu<%
@@ -381,43 +386,43 @@ body.menu-open {
  %>Long Courses<%
  }
  %>
-			</a> <a href="${pageContext.request.contextPath}/admissions">📝 <%
+			</a> <a href="${pageContext.request.contextPath}/admissions"><i class="fa-solid fa-pen-to-square"></i> <%
  if (sw) {
  %>Maombi<%
  } else {
  %>Admissions<%
  }
- %></a> <a href="${pageContext.request.contextPath}/production">🔨 <%
+ %></a> <a href="${pageContext.request.contextPath}/production"><i class="fa-solid fa-industry"></i> <%
  if (sw) {
  %>Uzalishaji<%
  } else {
  %>Production<%
  }
- %></a> <a href="${pageContext.request.contextPath}/payments">💳 <%
+ %></a> <a href="${pageContext.request.contextPath}/payments"><i class="fa-solid fa-credit-card"></i> <%
  if (sw) {
  %>Malipo<%
  } else {
  %>Payments<%
  }
- %></a> <a href="${pageContext.request.contextPath}/news">📰 <%
+ %></a> <a href="${pageContext.request.contextPath}/news"><i class="fa-solid fa-newspaper"></i> <%
  if (sw) {
  %>Habari<%
  } else {
  %>News<%
  }
- %></a> <a href="${pageContext.request.contextPath}/portal">🖥️ <%
+ %></a> <a href="${pageContext.request.contextPath}/portal"><i class="fa-solid fa-display"></i> <%
  if (sw) {
  %>Tovuti ya Wanafunzi<%
  } else {
  %>Student Portal<%
  }
- %></a> <a href="${pageContext.request.contextPath}/contact">📞 <%
+ %></a> <a href="${pageContext.request.contextPath}/contact"><i class="fa-solid fa-phone"></i> <%
  if (sw) {
  %>Wasiliana<%
  } else {
  %>Contact<%
  }
- %></a> <a href="${pageContext.request.contextPath}/admin">🔐 <%
+ %></a> <a href="${pageContext.request.contextPath}/admin"><i class="fa-solid fa-lock"></i> <%
  if (sw) {
  %>Msimamizi<%
  } else {

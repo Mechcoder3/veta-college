@@ -61,7 +61,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 		<c:if test="${success}">
 			<div class="ref-success"
 				style="max-width: 700px; margin: 0 auto 32px">
-				<div style="font-size: 2.5rem">🎉</div>
+				<div style="font-size: 2.5rem"><i class="fas fa-circle-check"></i></div>
 				<div class="rs-title">
 					<%
 					if (sw) {
@@ -99,7 +99,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 					style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap">
 					<a
 						href="${pageContext.request.contextPath}/payments?ref=${refNumber}"
-						class="btn btn-gold"> 💳 <%
+						class="btn btn-gold"> <i class="fas fa-credit-card"></i> <%
 					if (sw) {
 					%>Lipa Ada Sasa<%
 					} else {
@@ -109,7 +109,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 					%>
 					</a> <a
 						href="${pageContext.request.contextPath}/download?type=admission&ref=${refNumber}"
-						class="btn btn-white"> 📄 <%
+						class="btn btn-white"> <i class="fas fa-file-lines"></i> <%
  if (sw) {
  %>Pakua Barua ya Maombi<%
  } else {
@@ -518,7 +518,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 		: "I confirm all information is accurate and I accept KIGOMA RVTSC'S terms and conditions."%></label>
 					</div>
 					<button type="submit" class="btn btn-primary btn-lg btn-block">
-						📤
+						<i class="fas fa-paper-plane"></i>
 						<%
 					if (sw) {
 					%>Wasilisha Maombi<%
@@ -534,7 +534,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 			<div class="apply-sidebar">
 				<div class="aside-card">
 					<h4>
-						📋
+						<i class="fas fa-clipboard-list"></i>
 						<%
 					if (sw) {
 					%>Jinsi ya Kuomba<%
@@ -544,7 +544,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 					%>
 					</h4>
 					<div class="asi">
-						📝 <span>
+						<i class="fas fa-pen-to-square"></i> <span>
 							<%
 							if (sw) {
 							%>Jaza fomu yote kikamilifu<%
@@ -556,7 +556,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 						</span>
 					</div>
 					<div class="asi">
-						📄 <span>
+						<i class="fas fa-file-lines"></i> <span>
 							<%
 							if (sw) {
 							%>Pakia vyeti vya masomo<%
@@ -568,7 +568,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 						</span>
 					</div>
 					<div class="asi">
-						🔢 <span>
+						<i class="fas fa-hashtag"></i> <span>
 							<%
 							if (sw) {
 							%>Pokea nambari ya kumbukumbu<%
@@ -580,7 +580,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 						</span>
 					</div>
 					<div class="asi">
-						💳 <span>
+						<i class="fas fa-credit-card"></i> <span>
 							<%
 							if (sw) {
 							%>Tengeneza nambari ya udhibiti, lipa TZS 5,000<%
@@ -592,7 +592,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 						</span>
 					</div>
 					<div class="asi">
-						✅ <span>
+						<i class="fas fa-circle-check"></i> <span>
 							<%
 							if (sw) {
 							%>Subiri barua ya udahili<%
@@ -606,7 +606,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				</div>
 				<div class="aside-card" style="border-top-color: var(--gold)">
 					<h4>
-						📅
+						<i class="fas fa-calendar-days"></i>
 						<%
 					if (sw) {
 					%>Tarehe za Udahili<%
@@ -616,7 +616,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 					%>
 					</h4>
 					<div class="asi">
-						🟢 <span>January 2027 — <%
+						<i class="fas fa-circle" style="color: var(--green, #2e8b57); font-size: .6em"></i> <span>January 2027 — <%
 					if (sw) {
 					%>Mwisho: Novemba 30, 2026<%
 					} else {
@@ -626,7 +626,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 					%></span>
 					</div>
 					<div class="asi">
-						🟡 <span>July 2026 — <%
+						<i class="fas fa-circle" style="color: var(--gold, #d4a017); font-size: .6em"></i> <span>July 2026 — <%
 					if (sw) {
 					%>Mwisho: Mei 31, 2026<%
 					} else {
@@ -636,12 +636,12 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 					%></span>
 					</div>
 					<div class="asi">
-						📞 <span>+255282804951</span>
+						<i class="fas fa-phone"></i> <span>+255282804951</span>
 					</div>
 				</div>
 				<div class="aside-card" style="border-top-color: var(--green)">
 					<h4>
-						💰
+						<i class="fas fa-coins"></i>
 						<%
 					if (sw) {
 					%>Muhtasari wa Ada<%
@@ -651,7 +651,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 					%>
 					</h4>
 					<div class="asi">
-						📌 <span>
+						<i class="fas fa-thumbtack"></i> <span>
 							<%
 							if (sw) {
 							%>Ada ya Maombi: TZS 5,000<%
@@ -663,7 +663,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 						</span>
 					</div>
 					<div class="asi">
-						📌 <span>
+						<i class="fas fa-thumbtack"></i> <span>
 							<%
 							if (sw) {
 							%>Usajili: TZS 5,000 (mara moja)<%
@@ -675,7 +675,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 						</span>
 					</div>
 					<div class="asi">
-						📌 <span>
+						<i class="fas fa-thumbtack"></i> <span>
 							<%
 							if (sw) {
 							%>Masomo: TZS 60,000 KUTWA–120,000 BWENI/mwaka<%
@@ -687,7 +687,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 						</span>
 					</div>
 					<div class="asi">
-						📌 <span>
+						<i class="fas fa-thumbtack"></i> <span>
 							<%
 							if (sw) {
 							%>Mtihani: TZS 30,000/mwaka<%
@@ -703,7 +703,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				<%-- Track Application --%>
 				<div class="aside-card" style="border-top-color: var(--blue)">
 					<h4>
-						🔍
+						<i class="fas fa-magnifying-glass"></i>
 						<%
 					if (sw) {
 					%>Fuatilia Maombi<%
@@ -720,7 +720,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 								value="${param.ref}">
 						</div>
 						<button type="submit" class="btn btn-primary btn-block btn-sm">
-							🔍
+							<i class="fas fa-magnifying-glass"></i>
 							<%
 						if (sw) {
 						%>Angalia Hali<%

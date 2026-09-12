@@ -34,7 +34,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 <div style="padding: 56px 0; background: var(--off)">
 	<div class="wrap-xs">
 		<div class="plc">
-			<div class="plic">👨‍🎓</div>
+			<div class="plic"><i class="fa-solid fa-user-graduate"></i></div>
 			<h2
 				style="font-size: 1.4rem; color: var(--navy); margin-bottom: 5px; text-align: center">
 				<%
@@ -93,7 +93,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 						placeholder="••••••">
 				</div>
 				<button type="submit" class="btn btn-primary btn-block btn-lg">
-					🔐
+					<i class="fa-solid fa-lock"></i>
 					<%
 				if (sw) {
 				%>Ingia kwenye Tovuti<%
@@ -142,7 +142,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 			</div>
 			<div
 				style="background: var(--g100); border-radius: 8px; padding: 11px; margin-top: 14px; font-size: .76rem; color: var(--g600); text-align: center">
-				💡
+				<i class="fa-solid fa-lightbulb"></i>
 				<%
 			if (sw) {
 			%>Demo: ingiza nambari na nenosiri yoyote kupitia mfumo<%

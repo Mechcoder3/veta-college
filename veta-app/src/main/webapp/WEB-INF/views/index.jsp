@@ -14,7 +14,7 @@
 <section id="leadership">
   <div class="wrap">
     <div class="leader-intro">
-      <span class="leader-kicker">🏛️ <% if(sw){ %>Uongozi wa Chuo<% } else { %>Center Management<% } %></span>
+      <span class="leader-kicker"><i class="fa-solid fa-landmark"></i> <% if(sw){ %>Uongozi wa Chuo<% } else { %>Center Management<% } %></span>
       <h2 class="leader-title"><% if(sw){ %>Timu ya Uongozi Wetu<% } else { %>Meet Our Leadership Team<% } %></h2>
       <p class="leader-sub"><% if(sw){ %>Wataalamu waliojitoa kwa ubora wa elimu ya ufundi<% } else { %>Experienced professionals dedicated to excellence in vocational education<% } %></p>
     </div>
@@ -29,7 +29,7 @@
     <img src="${pageContext.request.contextPath}/Images/${principal.photoPath}" 
          alt="${principal.fullName}">
 </c:when>
-            <c:otherwise><span class="photo-icon">👨‍💼</span></c:otherwise>
+            <c:otherwise><span class="photo-icon"><i class="fa-solid fa-user-tie"></i></span></c:otherwise>
           </c:choose>
          <div class="photo-ribbon">
     <div class="ribbon-name" style="color: #ffffff; font-size: 1.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
@@ -42,16 +42,16 @@
         </div>
       </div>
       <div class="principal-info">
-        <div class="p-label">🏛️ <% if(sw){ %>MKUU WA CHUO — PRINCIPAL<% } else { %>PRINCIPAL — MKUU WA CHUO<% } %></div>
+        <div class="p-label"><i class="fa-solid fa-landmark"></i> <% if(sw){ %>MKUU WA CHUO — PRINCIPAL<% } else { %>PRINCIPAL — MKUU WA CHUO<% } %></div>
         <h2 class="p-name">${principal.displayName}</h2>
         <div class="p-creds">${principal.qualifications}</div>
         <blockquote class="p-quote">${principal.welcomeMessage}</blockquote>
         <div class="p-actions">
           <button class="btn btn-gold" onclick="openModal('principalModal')">
-            📖 <% if(sw){ %>Soma Ujumbe Kamili<% } else { %>Read Full Message<% } %>
+            <i class="fa-solid fa-book-open"></i> <% if(sw){ %>Soma Ujumbe Kamili<% } else { %>Read Full Message<% } %>
           </button>
           <a href="${pageContext.request.contextPath}/contact" class="btn btn-outline-w">
-            📧 <% if(sw){ %>Wasiliana na Mkuu<% } else { %>Contact Principal<% } %>
+            <i class="fa-solid fa-envelope"></i> <% if(sw){ %>Wasiliana na Mkuu<% } else { %>Contact Principal<% } %>
           </a>
         </div>
         <div class="p-meta">
@@ -78,7 +78,7 @@
                  alt="${s.fullName}">
         </c:when>
         <c:otherwise>
-            <span style="font-size: 60px;">👤</span>
+            <i class="fa-solid fa-user" style="font-size: 60px; color: var(--gold);"></i>
         </c:otherwise>
     </c:choose>
 </div>
@@ -95,17 +95,17 @@
   <div class="hero-bg"><div class="hb hb1"></div><div class="hb hb2"></div></div>
   <div class="wrap">
     <div class="hero-content">
-      <div class="hero-badge">🇹🇿 <% if(sw){ %>Imethibitishwa na Serikali · Ngazi ya NVA 1–3 · Est. 2005<% } else { %>Government Accredited · NVA Level 1–3 · Est. 2005<% } %></div>
+      <div class="hero-badge"><i class="fa-solid fa-flag"></i> <% if(sw){ %>Imethibitishwa na Serikali · Ngazi ya NVA 1–3 · Est. 2005<% } else { %>Government Accredited · NVA Level 1–3 · Est. 2005<% } %></div>
       <h1 class="hero-title"><% if(sw){ %>Nguvu Kazi Yenye Ujuzi mustakabali wa Tanzania<% } else { %>Skilled labour force the future of Tanzania<% } %></h1>
       <p class="hero-desc"><%= sw?
           "Mafunzo ya ufundi ya kiwango cha dunia katika uhandisi, TEHAMA, magari, ujenzi na zaidi." :
           "World-class vocational training in engineering, ICT, automotive, construction and more." %></p>
       <div class="hero-actions">
         <a href="${pageContext.request.contextPath}/admissions" class="btn btn-gold btn-lg">
-          🎓 <% if(sw){ %>Omba Sasa<% } else { %>Apply Now<% } %>
+          <i class="fa-solid fa-graduation-cap"></i> <% if(sw){ %>Omba Sasa<% } else { %>Apply Now<% } %>
         </a>
         <a href="${pageContext.request.contextPath}/courses?type=long" class="btn btn-outline-w btn-lg">
-          📚 <% if(sw){ %>Chunguza Programu<% } else { %>Explore Programs<% } %>
+          <i class="fa-solid fa-book"></i> <% if(sw){ %>Chunguza Programu<% } else { %>Explore Programs<% } %>
         </a>
       </div>
       <div class="hero-stats">
@@ -122,7 +122,7 @@
 <%-- ANNOUNCE BAR --%>
 <div class="announce-bar">
   <div class="wrap">
-    <span class="a-label">📢 <% if(sw){ %>TANGAZO<% } else { %>NOTICE<% } %></span>
+    <span class="a-label"><i class="fa-solid fa-bullhorn"></i> <% if(sw){ %>TANGAZO<% } else { %>NOTICE<% } %></span>
     <span class="a-text" id="announceTxt">
       <%= sw?
           "Udahili wa APRIL 2026 Umefunguliwa Wa ngazi ya 3— Omba Mtandaoni Leo! Mwisho: JULAI 30, 2026" :
@@ -140,32 +140,32 @@
     </div>
     <div class="quick-grid">
       <a href="${pageContext.request.contextPath}/courses?type=short" class="quick-card">
-        <div class="q-icon" style="background:#EFF6FF">⚡</div>
+        <div class="q-icon" style="background:#EFF6FF"><i class="fa-solid fa-bolt"></i></div>
         <div class="q-title"><% if(sw){ %>Kozi Fupi<% } else { %>Short Courses<% } %></div>
         <div class="q-desc"><% if(sw){ %>Programu za miezi 3–6<% } else { %>3–6 month programs<% } %></div>
       </a>
       <a href="${pageContext.request.contextPath}/courses?type=long" class="quick-card">
-        <div class="q-icon" style="background:#ECFDF5">🎓</div>
+        <div class="q-icon" style="background:#ECFDF5"><i class="fa-solid fa-graduation-cap"></i></div>
         <div class="q-title"><% if(sw){ %>Kozi Ndefu<% } else { %>Long Courses<% } %></div>
         <div class="q-desc"><% if(sw){ %>Miaka 2–3 NVA<% } else { %>2–3 year NVA certified<% } %></div>
       </a>
       <a href="${pageContext.request.contextPath}/admissions" class="quick-card">
-        <div class="q-icon" style="background:#FFF7ED">📝</div>
+        <div class="q-icon" style="background:#FFF7ED"><i class="fa-solid fa-pen-to-square"></i></div>
         <div class="q-title"><% if(sw){ %>Omba Mtandaoni<% } else { %>Apply Online<% } %></div>
         <div class="q-desc"><% if(sw){ %>Ombi rahisi la mtandaoni<% } else { %>Easy online application<% } %></div>
       </a>
       <a href="${pageContext.request.contextPath}/payments" class="quick-card">
-        <div class="q-icon" style="background:#F5F3FF">💳</div>
+        <div class="q-icon" style="background:#F5F3FF"><i class="fa-solid fa-credit-card"></i></div>
         <div class="q-title"><% if(sw){ %>Malipo<% } else { %>Payments<% } %></div>
         <div class="q-desc"><% if(sw){ %>Nambari ya Udhibiti<% } else { %>Control number system<% } %></div>
       </a>
       <a href="${pageContext.request.contextPath}/portal" class="quick-card">
-        <div class="q-icon" style="background:#F0FDFA">🖥️</div>
+        <div class="q-icon" style="background:#F0FDFA"><i class="fa-solid fa-display"></i></div>
         <div class="q-title"><% if(sw){ %>Tovuti ya Wanafunzi<% } else { %>Student Portal<% } %></div>
         <div class="q-desc"><% if(sw){ %>Hali na nyaraka<% } else { %>Status & documents<% } %></div>
       </a>
       <a href="${pageContext.request.contextPath}/production" class="quick-card">
-        <div class="q-icon" style="background:#FEF9C3">🔨</div>
+        <div class="q-icon" style="background:#FEF9C3"><i class="fa-solid fa-industry"></i></div>
         <div class="q-title"><% if(sw){ %>Uzalishaji<% } else { %>Production<% } %></div>
         <div class="q-desc"><% if(sw){ %>Bidhaa na huduma<% } else { %>Products & services<% } %></div>
       </a>
@@ -189,7 +189,7 @@
       <c:forEach var="c" items="${longCourses}" end="2">
       <div class="prog-card">
         <div class="prog-head" style="background:linear-gradient(135deg,#0A2463,#1565C0)">
-          <div class="prog-icon">📚</div>
+          <div class="prog-icon"><i class="fa-solid fa-book"></i></div>
           <div class="prog-type">NVA <% if(sw){ %>KOZI NDEFU<% } else { %>LONG COURSE<% } %></div>
           <h3>${c.nameEn}</h3>
           <div class="prog-nva">${c.nvaLevel} · ${c.getDurationDisplay()}</div>
@@ -253,12 +253,12 @@
   <div class="modal" onclick="event.stopPropagation()">
     <div class="modal-head">
       <h3><% if(sw){ %>Ujumbe Kamili wa Mkuu wa Chuo<% } else { %>Principal's Full Welcome Message<% } %></h3>
-      <button class="modal-close" onclick="closeModal('principalModal')">✕</button>
+      <button class="modal-close" onclick="closeModal('principalModal')"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <div class="modal-body">
       <c:if test="${principal != null}">
         <div style="text-align:center;margin-bottom:20px">
-          <div class="principal-modal-avatar">👨‍💼</div>
+          <div class="principal-modal-avatar"><i class="fa-solid fa-user-tie"></i></div>
           <h3>${principal.displayName}</h3>
           <p style="color:var(--gold);font-size:.85rem">${principal.roleTitle}</p>
         </div>
