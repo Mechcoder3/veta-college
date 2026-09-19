@@ -20,6 +20,8 @@ public class HomeServlet extends HttpServlet {
             req.setAttribute("longCourses", courseDAO.findByType("LONG"));
             req.setAttribute("newsList",    newsDAO.findPublished(3));
         } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("DB ERROR (HomeServlet): " + e);
             req.setAttribute("dbError", e.getMessage());
         }
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, res);
