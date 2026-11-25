@@ -577,7 +577,7 @@ button {
 
 .photo-frame {
 	width: 100%;
-	max-width: 248px;
+	max-width: 238px;
 	aspect-ratio: 3/4;
 	border-radius: var(--r12);
 	background: rgba(255, 255, 255, .08);

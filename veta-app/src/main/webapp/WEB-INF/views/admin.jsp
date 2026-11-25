@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="activePage" value="admin" />
 <c:set var="pageTitle" value="Admin Panel" />
@@ -8,6 +7,40 @@
 boolean sw = "sw".equals(session.getAttribute("lang"));
 %>
 <jsp:include page="header.jsp" />
+
+<%-- Font Awesome (ukiwa tayari umeiweka kwenye header.jsp, unaweza kufuta mstari huu) --%>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+.asni i {
+	width: 20px;
+	text-align: center;
+	margin-right: 6px;
+}
+
+.scc {
+	position: relative;
+	overflow: hidden;
+}
+
+.scc-icon {
+	position: absolute;
+	right: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 2.6rem;
+	color: #fff;
+	opacity: .25;
+}
+
+.ic-ok {
+	color: #2e7d32;
+}
+
+.ic-no {
+	color: #c62828;
+}
+</style>
 
 <div style="background: var(--off); min-height: calc(100vh - 150px)">
 	<div class="wrap" style="padding-top: 24px; padding-bottom: 24px">
@@ -30,118 +63,45 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 					</div>
 				</div>
 				<div class="asnav">
-					<div class="asnl">
-						<%
-						if (sw) {
-						%>Kuu<%
-						} else {
-						%>Main<%
-						}
-						%>
-					</div>
+					<div class="asnl"><%=sw ? "Kuu" : "Main"%></div>
 					<a href="${pageContext.request.contextPath}/admin?tab=overview"
-						class="asni ${activeTab=='overview'?'active':''}">📊 <%
-					if (sw) {
-					%>Dashibodi<%
-					} else {
-					%>Dashboard<%
-					}
-					%></a>
+						class="asni ${activeTab=='overview'?'active':''}"><i
+						class="fa-solid fa-chart-pie"></i> <%=sw ? "Dashibodi" : "Dashboard"%></a>
 					<a href="${pageContext.request.contextPath}/admin?tab=leadership"
-						class="asni ${activeTab=='leadership'?'active':''}">👥 <%
-					if (sw) {
-					%>Uongozi<%
-					} else {
-					%>Leadership<%
-					}
-					%></a>
-					<div class="asnl">
-						<%
-						if (sw) {
-						%>Masomo<%
-						} else {
-						%>Academic<%
-						}
-						%>
-					</div>
+						class="asni ${activeTab=='leadership'?'active':''}"><i
+						class="fa-solid fa-users"></i> <%=sw ? "Uongozi" : "Leadership"%></a>
+
+					<div class="asnl"><%=sw ? "Masomo" : "Academic"%></div>
 					<a href="${pageContext.request.contextPath}/admin?tab=applications"
-						class="asni ${activeTab=='applications'?'active':''}">📋 <%
-					if (sw) {
-					%>Maombi<%
-					} else {
-					%>Applications<%
-					}
-					%>
-						<span class="asnib">${pendingApps > 0 ? pendingApps : ''}</span></a> <a
-						href="${pageContext.request.contextPath}/admin?tab=students"
-						class="asni ${activeTab=='students'?'active':''}">🎓 <%
- if (sw) {
- %>Wanafunzi<%
- } else {
- %>Students<%
- }
- %></a>
+						class="asni ${activeTab=='applications'?'active':''}"><i
+						class="fa-solid fa-clipboard-list"></i> <%=sw ? "Maombi" : "Applications"%>
+						<span class="asnib">${pendingApps > 0 ? pendingApps : ''}</span></a>
+					<a href="${pageContext.request.contextPath}/admin?tab=students"
+						class="asni ${activeTab=='students'?'active':''}"><i
+						class="fa-solid fa-user-graduate"></i> <%=sw ? "Wanafunzi" : "Students"%></a>
 					<a href="${pageContext.request.contextPath}/admin?tab=courses"
-						class="asni ${activeTab=='courses'?'active':''}">📚 <%
-					if (sw) {
-					%>Kozi<%
-					} else {
-					%>Courses<%
-					}
-					%></a>
-					<div class="asnl">
-						<%
-						if (sw) {
-						%>Fedha<%
-						} else {
-						%>Finance<%
-						}
-						%>
-					</div>
+						class="asni ${activeTab=='courses'?'active':''}"><i
+						class="fa-solid fa-book"></i> <%=sw ? "Kozi" : "Courses"%></a>
+
+					<div class="asnl"><%=sw ? "Fedha" : "Finance"%></div>
 					<a href="${pageContext.request.contextPath}/admin?tab=payments"
-						class="asni ${activeTab=='payments'?'active':''}">💰 <%
-					if (sw) {
-					%>Malipo<%
-					} else {
-					%>Payments<%
-					}
-					%>
+						class="asni ${activeTab=='payments'?'active':''}"><i
+						class="fa-solid fa-money-bill-wave"></i> <%=sw ? "Malipo" : "Payments"%>
 						<span class="asnib">${pendingPayments > 0 ? pendingPayments : ''}</span></a>
-					<div class="asnl">
-						<%
-						if (sw) {
-						%>Uendeshaji<%
-						} else {
-						%>Operations<%
-						}
-						%>
-					</div>
+
+					<div class="asnl"><%=sw ? "Uendeshaji" : "Operations"%></div>
 					<a href="${pageContext.request.contextPath}/admin?tab=production"
-						class="asni ${activeTab=='production'?'active':''}">🔨 <%
-					if (sw) {
-					%>Maagizo<%
-					} else {
-					%>Production<%
-					}
-					%></a>
+						class="asni ${activeTab=='production'?'active':''}"><i
+						class="fa-solid fa-hammer"></i> <%=sw ? "Maagizo" : "Production"%></a>
 					<a href="${pageContext.request.contextPath}/admin?tab=news"
-						class="asni ${activeTab=='news'?'active':''}">📰 <%
-					if (sw) {
-					%>Habari<%
-					} else {
-					%>News<%
-					}
-					%></a>
+						class="asni ${activeTab=='news'?'active':''}"><i
+						class="fa-solid fa-newspaper"></i> <%=sw ? "Habari" : "News"%></a>
+
 					<hr
 						style="border-color: rgba(255, 255, 255, .08); margin: 8px 16px">
 					<a href="${pageContext.request.contextPath}/logout" class="asni"
-						style="color: rgba(220, 80, 80, .8)">🚪 <%
-					if (sw) {
-					%>Toka<%
-					} else {
-					%>Logout<%
-					}
-					%></a>
+						style="color: rgba(220, 80, 80, .8)"><i
+						class="fa-solid fa-right-from-bracket"></i> <%=sw ? "Toka" : "Logout"%></a>
 				</div>
 			</div>
 
@@ -164,141 +124,52 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				<c:if test="${activeTab == 'overview'}">
 					<div class="amc">
 						<div class="atop">
-							<h2>
-								<%
-								if (sw) {
-								%>Muhtasari wa Dashibodi<%
-								} else {
-								%>Dashboard Overview<%
-								}
-								%>
-							</h2>
+							<h2><%=sw ? "Muhtasari wa Dashibodi" : "Dashboard Overview"%></h2>
 							<span style="font-size: .78rem; color: var(--g400)"><%=new java.util.Date()%></span>
 						</div>
 						<div class="sc2">
 							<div class="scc"
-								style="background: linear-gradient(135deg, var(--navy), var(--blue))"
-								data-icon="🎓">
+								style="background: linear-gradient(135deg, var(--navy), var(--blue))">
+								<i class="fa-solid fa-user-graduate scc-icon"></i>
 								<div class="scn">${totalStudents}</div>
-								<div class="scl">
-									<%
-									if (sw) {
-									%>Wanafunzi Wote<%
-									} else {
-									%>Total Students<%
-									}
-									%>
-								</div>
+								<div class="scl"><%=sw ? "Wanafunzi Wote" : "Total Students"%></div>
 							</div>
 							<div class="scc"
-								style="background: linear-gradient(135deg, #1B5E20, #388E3C)"
-								data-icon="📋">
+								style="background: linear-gradient(135deg, #1B5E20, #388E3C)">
+								<i class="fa-solid fa-clipboard-list scc-icon"></i>
 								<div class="scn">${pendingApps}</div>
-								<div class="scl">
-									<%
-									if (sw) {
-									%>Maombi Mapya<%
-									} else {
-									%>New Applications<%
-									}
-									%>
-								</div>
+								<div class="scl"><%=sw ? "Maombi Mapya" : "New Applications"%></div>
 							</div>
 							<div class="scc"
-								style="background: linear-gradient(135deg, #E65100, #F4511E)"
-								data-icon="💳">
+								style="background: linear-gradient(135deg, #E65100, #F4511E)">
+								<i class="fa-solid fa-credit-card scc-icon"></i>
 								<div class="scn">${pendingPayments}</div>
-								<div class="scl">
-									<%
-									if (sw) {
-									%>Malipo Yanayosubiri<%
-									} else {
-									%>Pending Payments<%
-									}
-									%>
-								</div>
+								<div class="scl"><%=sw ? "Malipo Yanayosubiri" : "Pending Payments"%></div>
 							</div>
 							<div class="scc"
-								style="background: linear-gradient(135deg, #4A148C, #7B1FA2)"
-								data-icon="🔨">
+								style="background: linear-gradient(135deg, #4A148C, #7B1FA2)">
+								<i class="fa-solid fa-hammer scc-icon"></i>
 								<div class="scn">${activeOrders}</div>
-								<div class="scl">
-									<%
-									if (sw) {
-									%>Maagizo Yanayoendelea<%
-									} else {
-									%>Active Orders<%
-									}
-									%>
-								</div>
+								<div class="scl"><%=sw ? "Maagizo Yanayoendelea" : "Active Orders"%></div>
 							</div>
 						</div>
 					</div>
 					<div class="amc">
 						<div class="atop">
-							<h2>
-								<%
-								if (sw) {
-								%>Maombi ya Hivi Karibuni<%
-								} else {
-								%>Recent
-								Applications<%
-								}
-								%>
-							</h2>
+							<h2><%=sw ? "Maombi ya Hivi Karibuni" : "Recent Applications"%></h2>
 							<a
 								href="${pageContext.request.contextPath}/admin?tab=applications"
-								class="btn btn-primary btn-sm">
-								<%
-								if (sw) {
-								%>Angalia Zote<%
-								} else {
-								%>View All<%
-								}
-								%>
-							</a>
+								class="btn btn-primary btn-sm"><%=sw ? "Angalia Zote" : "View All"%></a>
 						</div>
 						<div class="tw">
 							<table class="at2">
 								<thead>
 									<tr>
 										<th>Ref</th>
-										<th>
-											<%
-											if (sw) {
-											%>Jina<%
-											} else {
-											%>Name<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Kozi<%
-											} else {
-											%>Course<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Tarehe<%
-											} else {
-											%>Date<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hali<%
-											} else {
-											%>Status<%
-											}
-											%>
-										</th>
+										<th><%=sw ? "Jina" : "Name"%></th>
+										<th><%=sw ? "Kozi" : "Course"%></th>
+										<th><%=sw ? "Tarehe" : "Date"%></th>
+										<th><%=sw ? "Hali" : "Status"%></th>
 										<th></th>
 									</tr>
 								</thead>
@@ -314,7 +185,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 												class="badge ${a.status=='APPROVED'?'b-green':a.status=='REJECTED'?'b-red':a.status=='PENDING'?'b-pending':'b-info'}">${a.status}</span></td>
 											<td><a
 												href="${pageContext.request.contextPath}/admin?tab=applications"
-												class="btn btn-ghost btn-xs">👁</a></td>
+												class="btn btn-ghost btn-xs"><i class="fa-solid fa-eye"></i></a></td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -327,15 +198,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				<c:if test="${activeTab == 'applications'}">
 					<div class="amc">
 						<div class="atop">
-							<h2>
-								<%
-								if (sw) {
-								%>Usimamizi wa Maombi<%
-								} else {
-								%>Application Management<%
-								}
-								%>
-							</h2>
+							<h2><%=sw ? "Usimamizi wa Maombi" : "Application Management"%></h2>
 							<div style="display: flex; gap: 7px; flex-wrap: wrap">
 								<a href="?tab=applications" class="btn btn-ghost btn-sm">All</a>
 								<a href="?tab=applications&status=PENDING"
@@ -351,52 +214,12 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 								<thead>
 									<tr>
 										<th>Ref</th>
-										<th>
-											<%
-											if (sw) {
-											%>Jina<%
-											} else {
-											%>Name<%
-											}
-											%>
-										</th>
+										<th><%=sw ? "Jina" : "Name"%></th>
 										<th>NIDA</th>
-										<th>
-											<%
-											if (sw) {
-											%>Kozi<%
-											} else {
-											%>Course<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Tarehe<%
-											} else {
-											%>Date<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hali<%
-											} else {
-											%>Status<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hatua<%
-											} else {
-											%>Actions<%
-											}
-											%>
-										</th>
+										<th><%=sw ? "Kozi" : "Course"%></th>
+										<th><%=sw ? "Tarehe" : "Date"%></th>
+										<th><%=sw ? "Hali" : "Status"%></th>
+										<th><%=sw ? "Hatua" : "Actions"%></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -418,19 +241,22 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 															style="display: inline">
 															<input type="hidden" name="action" value="approveApp"><input
 																type="hidden" name="ref" value="${a.refNumber}">
-															<button type="submit" class="btn btn-success btn-xs">✓</button>
+															<button type="submit" class="btn btn-success btn-xs"><i
+																	class="fa-solid fa-check"></i></button>
 														</form>
 														<form method="post"
 															action="${pageContext.request.contextPath}/admin"
 															style="display: inline">
 															<input type="hidden" name="action" value="rejectApp"><input
 																type="hidden" name="ref" value="${a.refNumber}">
-															<button type="submit" class="btn btn-danger btn-xs">✗</button>
+															<button type="submit" class="btn btn-danger btn-xs"><i
+																	class="fa-solid fa-xmark"></i></button>
 														</form>
 													</c:if>
 													<a
 														href="${pageContext.request.contextPath}/download?type=admission&ref=${a.refNumber}"
-														class="btn btn-ghost btn-xs">📄</a>
+														class="btn btn-ghost btn-xs"><i
+														class="fa-solid fa-file-lines"></i></a>
 												</div></td>
 										</tr>
 									</c:forEach>
@@ -444,15 +270,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				<c:if test="${activeTab == 'payments'}">
 					<div class="amc">
 						<div class="atop">
-							<h2>
-								<%
-								if (sw) {
-								%>Uthibitisho wa Malipo<%
-								} else {
-								%>Payment Verification<%
-								}
-								%>
-							</h2>
+							<h2><%=sw ? "Uthibitisho wa Malipo" : "Payment Verification"%></h2>
 							<div style="display: flex; gap: 7px">
 								<a href="?tab=payments" class="btn btn-ghost btn-sm">All</a> <a
 									href="?tab=payments&status=PENDING"
@@ -464,69 +282,13 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 							<table class="at2">
 								<thead>
 									<tr>
-										<th>
-											<%
-											if (sw) {
-											%>Nambari ya Udhibiti<%
-											} else {
-											%>Control No.<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Mlipaji<%
-											} else {
-											%>Payer<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Aina<%
-											} else {
-											%>Type<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Kiasi<%
-											} else {
-											%>Amount<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Tarehe<%
-											} else {
-											%>Date<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hali<%
-											} else {
-											%>Status<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hatua<%
-											} else {
-											%>Actions<%
-											}
-											%>
-										</th>
+										<th><%=sw ? "Nambari ya Udhibiti" : "Control No."%></th>
+										<th><%=sw ? "Mlipaji" : "Payer"%></th>
+										<th><%=sw ? "Aina" : "Type"%></th>
+										<th><%=sw ? "Kiasi" : "Amount"%></th>
+										<th><%=sw ? "Tarehe" : "Date"%></th>
+										<th><%=sw ? "Hali" : "Status"%></th>
+										<th><%=sw ? "Hatua" : "Actions"%></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -550,13 +312,13 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 															<input type="hidden" name="ctrl"
 																value="${p.controlNumber}"> <input type="hidden"
 																name="bankRef" value="MANUAL">
-															<button type="submit" class="btn btn-success btn-xs">✓
-																Verify</button>
+															<button type="submit" class="btn btn-success btn-xs"><i
+																	class="fa-solid fa-check"></i> Verify</button>
 														</form>
 													</c:if>
 													<a
 														href="${pageContext.request.contextPath}/download?type=receipt&ref=${p.controlNumber}"
-														class="btn btn-ghost btn-xs">🖨</a>
+														class="btn btn-ghost btn-xs"><i class="fa-solid fa-print"></i></a>
 												</div></td>
 										</tr>
 									</c:forEach>
@@ -570,15 +332,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				<c:if test="${activeTab == 'students'}">
 					<div class="amc">
 						<div class="atop">
-							<h2>
-								<%
-								if (sw) {
-								%>Usimamizi wa Wanafunzi<%
-								} else {
-								%>Student Management<%
-								}
-								%>
-							</h2>
+							<h2><%=sw ? "Usimamizi wa Wanafunzi" : "Student Management"%></h2>
 							<div style="display: flex; gap: 7px">
 								<a href="?tab=students" class="btn btn-ghost btn-sm">All</a> <a
 									href="?tab=students&status=ACTIVE" class="btn btn-ghost btn-sm">Active</a>
@@ -589,52 +343,12 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 								<thead>
 									<tr>
 										<th>ID</th>
-										<th>
-											<%
-											if (sw) {
-											%>Jina Kamili<%
-											} else {
-											%>Full Name<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Programu<%
-											} else {
-											%>Program<%
-											}
-											%>
-										</th>
+										<th><%=sw ? "Jina Kamili" : "Full Name"%></th>
+										<th><%=sw ? "Programu" : "Program"%></th>
 										<th>Y/S</th>
-										<th>
-											<%
-											if (sw) {
-											%>Simu<%
-											} else {
-											%>Phone<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hali<%
-											} else {
-											%>Status<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hatua<%
-											} else {
-											%>Actions<%
-											}
-											%>
-										</th>
+										<th><%=sw ? "Simu" : "Phone"%></th>
+										<th><%=sw ? "Hali" : "Status"%></th>
+										<th><%=sw ? "Hatua" : "Actions"%></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -650,7 +364,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 											<td><div class="ab">
 													<a
 														href="${pageContext.request.contextPath}/portal?student=${s.studentNumber}"
-														class="btn btn-ghost btn-xs">👁</a>
+														class="btn btn-ghost btn-xs"><i class="fa-solid fa-eye"></i></a>
 												</div></td>
 										</tr>
 									</c:forEach>
@@ -664,75 +378,19 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				<c:if test="${activeTab == 'courses'}">
 					<div class="amc">
 						<div class="atop">
-							<h2>
-								<%
-								if (sw) {
-								%>Usimamizi wa Kozi<%
-								} else {
-								%>Course Management<%
-								}
-								%>
-							</h2>
+							<h2><%=sw ? "Usimamizi wa Kozi" : "Course Management"%></h2>
 						</div>
 						<div class="tw">
 							<table class="at2">
 								<thead>
 									<tr>
-										<th>
-											<%
-											if (sw) {
-											%>Jina la Kozi<%
-											} else {
-											%>Course Name<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Aina<%
-											} else {
-											%>Type<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Muda<%
-											} else {
-											%>Duration<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Ada/Mwaka<%
-											} else {
-											%>Fee/yr<%
-											}
-											%>
-										</th>
+										<th><%=sw ? "Jina la Kozi" : "Course Name"%></th>
+										<th><%=sw ? "Aina" : "Type"%></th>
+										<th><%=sw ? "Muda" : "Duration"%></th>
+										<th><%=sw ? "Ada/Mwaka" : "Fee/yr"%></th>
 										<th>NVA</th>
-										<th>
-											<%
-											if (sw) {
-											%>Waliandikishwa<%
-											} else {
-											%>Enrolled<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hali<%
-											} else {
-											%>Status<%
-											}
-											%>
-										</th>
+										<th><%=sw ? "Waliandikishwa" : "Enrolled"%></th>
+										<th><%=sw ? "Hali" : "Status"%></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -759,74 +417,18 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				<c:if test="${activeTab == 'leadership'}">
 					<div class="amc">
 						<div class="atop">
-							<h2>
-								<%
-								if (sw) {
-								%>Usimamizi wa Uongozi<%
-								} else {
-								%>Leadership Management<%
-								}
-								%>
-							</h2>
+							<h2><%=sw ? "Usimamizi wa Uongozi" : "Leadership Management"%></h2>
 						</div>
 						<div class="tw">
 							<table class="at2">
 								<thead>
 									<tr>
-										<th>
-											<%
-											if (sw) {
-											%>Jina<%
-											} else {
-											%>Name<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Cheo<%
-											} else {
-											%>Title<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Idara<%
-											} else {
-											%>Dept.<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Mkuu<%
-											} else {
-											%>Principal<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Inaonekana<%
-											} else {
-											%>Visible<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hatua<%
-											} else {
-											%>Actions<%
-											}
-											%>
-										</th>
+										<th><%=sw ? "Jina" : "Name"%></th>
+										<th><%=sw ? "Cheo" : "Title"%></th>
+										<th><%=sw ? "Idara" : "Dept."%></th>
+										<th><%=sw ? "Mkuu" : "Principal"%></th>
+										<th><%=sw ? "Inaonekana" : "Visible"%></th>
+										<th><%=sw ? "Hatua" : "Actions"%></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -835,11 +437,22 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 											<td><strong>${s.displayName}</strong></td>
 											<td style="font-size: .82rem">${s.roleTitle}</td>
 											<td style="font-size: .78rem">${s.department}</td>
-											<td>${s.principal?'✅':''}</td>
-											<td>${s.visible?'✅':'❌'}</td>
+											<td><c:if test="${s.principal}">
+													<i class="fa-solid fa-circle-check ic-ok"></i>
+												</c:if></td>
+											<td><c:choose>
+													<c:when test="${s.visible}">
+														<i class="fa-solid fa-circle-check ic-ok"></i>
+													</c:when>
+													<c:otherwise>
+														<i class="fa-solid fa-circle-xmark ic-no"></i>
+													</c:otherwise>
+												</c:choose></td>
 											<td><div class="ab">
 													<button class="btn btn-outline btn-xs"
-														onclick="alert('Edit form - connect to backend')">✏️</button>
+														onclick="alert('Edit form - connect to backend')">
+														<i class="fa-solid fa-pen"></i>
+													</button>
 												</div></td>
 										</tr>
 									</c:forEach>
@@ -853,15 +466,7 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				<c:if test="${activeTab == 'production'}">
 					<div class="amc">
 						<div class="atop">
-							<h2>
-								<%
-								if (sw) {
-								%>Maagizo ya Uzalishaji<%
-								} else {
-								%>Production Orders<%
-								}
-								%>
-							</h2>
+							<h2><%=sw ? "Maagizo ya Uzalishaji" : "Production Orders"%></h2>
 							<div style="display: flex; gap: 7px">
 								<a href="?tab=production" class="btn btn-ghost btn-sm">All</a> <a
 									href="?tab=production&status=PENDING"
@@ -877,60 +482,12 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 								<thead>
 									<tr>
 										<th>Order #</th>
-										<th>
-											<%
-											if (sw) {
-											%>Mteja<%
-											} else {
-											%>Client<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Bidhaa<%
-											} else {
-											%>Product<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Bajeti<%
-											} else {
-											%>Budget<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Tarehe<%
-											} else {
-											%>Date<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hali<%
-											} else {
-											%>Status<%
-											}
-											%>
-										</th>
-										<th>
-											<%
-											if (sw) {
-											%>Hatua<%
-											} else {
-											%>Actions<%
-											}
-											%>
-										</th>
+										<th><%=sw ? "Mteja" : "Client"%></th>
+										<th><%=sw ? "Bidhaa" : "Product"%></th>
+										<th><%=sw ? "Bajeti" : "Budget"%></th>
+										<th><%=sw ? "Tarehe" : "Date"%></th>
+										<th><%=sw ? "Hali" : "Status"%></th>
+										<th><%=sw ? "Hatua" : "Actions"%></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -957,8 +514,8 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 																value="updateOrderStatus"> <input type="hidden"
 																name="orderNo" value="${o.orderNumber}"> <input
 																type="hidden" name="status" value="IN_PROGRESS">
-															<button type="submit" class="btn btn-primary btn-xs">▶
-																Start</button>
+															<button type="submit" class="btn btn-primary btn-xs"><i
+																	class="fa-solid fa-play"></i> Start</button>
 														</form>
 													</c:if>
 													<c:if test="${o.status == 'IN_PROGRESS'}">
@@ -969,8 +526,8 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 																value="updateOrderStatus"> <input type="hidden"
 																name="orderNo" value="${o.orderNumber}"> <input
 																type="hidden" name="status" value="COMPLETED">
-															<button type="submit" class="btn btn-success btn-xs">✓
-																Done</button>
+															<button type="submit" class="btn btn-success btn-xs"><i
+																	class="fa-solid fa-check"></i> Done</button>
 														</form>
 													</c:if>
 												</div></td>
@@ -986,26 +543,10 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 				<c:if test="${activeTab == 'news'}">
 					<div class="amc">
 						<div class="atop">
-							<h2>
-								<%
-								if (sw) {
-								%>Usimamizi wa Habari<%
-								} else {
-								%>News & Events
-								Management<%
-								}
-								%>
-							</h2>
+							<h2><%=sw ? "Usimamizi wa Habari" : "News & Events Management"%></h2>
 							<button class="btn btn-primary btn-sm"
 								onclick="document.getElementById('addNewsForm').classList.toggle('hidden')">
-								+
-								<%
-							if (sw) {
-							%>Ongeza Habari<%
-							} else {
-							%>Add News<%
-							}
-							%>
+								<i class="fa-solid fa-plus"></i> <%=sw ? "Ongeza Habari" : "Add News"%>
 							</button>
 						</div>
 						<%-- Add Form --%>
@@ -1064,8 +605,8 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 									</div>
 								</div>
 								<button type="submit" class="btn btn-primary">
-									📰
-									<% if(sw){ %>Chapisha Tukio<% } else { %>Publish Event<% } %>
+									<i class="fa-solid fa-newspaper"></i>
+									<%=sw ? "Chapisha Tukio" : "Publish Event"%>
 								</button>
 							</form>
 						</div>
@@ -1074,21 +615,11 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 								<thead>
 									<tr>
 										<th></th>
-										<th>
-											<% if(sw){ %>Kichwa<% } else { %>Title<% } %>
-										</th>
-										<th>
-											<% if(sw){ %>Kategoria<% } else { %>Category<% } %>
-										</th>
-										<th>
-											<% if(sw){ %>Tarehe<% } else { %>Date<% } %>
-										</th>
-										<th>
-											<% if(sw){ %>Hali<% } else { %>Status<% } %>
-										</th>
-										<th>
-											<% if(sw){ %>Hatua<% } else { %>Actions<% } %>
-										</th>
+										<th><%=sw ? "Kichwa" : "Title"%></th>
+										<th><%=sw ? "Kategoria" : "Category"%></th>
+										<th><%=sw ? "Tarehe" : "Date"%></th>
+										<th><%=sw ? "Hali" : "Status"%></th>
+										<th><%=sw ? "Hatua" : "Actions"%></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -1108,8 +639,8 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 															style="display: inline">
 															<input type="hidden" name="action" value="publishNews"><input
 																type="hidden" name="id" value="${n.id}">
-															<button type="submit" class="btn btn-primary btn-xs">▶
-																Publish</button>
+															<button type="submit" class="btn btn-primary btn-xs"><i
+																	class="fa-solid fa-play"></i> Publish</button>
 														</form>
 													</c:if>
 													<form method="post"
@@ -1118,7 +649,8 @@ boolean sw = "sw".equals(session.getAttribute("lang"));
 														onsubmit="return confirm('Delete this event?')">
 														<input type="hidden" name="action" value="deleteNews"><input
 															type="hidden" name="id" value="${n.id}">
-														<button type="submit" class="btn btn-danger btn-xs">🗑</button>
+														<button type="submit" class="btn btn-danger btn-xs"><i
+																class="fa-solid fa-trash"></i></button>
 													</form>
 												</div></td>
 										</tr>
